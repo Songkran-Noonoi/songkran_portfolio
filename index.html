@@ -6,23 +6,23 @@
     <title>Songkran Portfolio</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts (Inter & Noto Sans Thai - โมเดิร์น ไม่มีหัว) -->
+    <!-- Google Fonts (Inter - โมเดิร์น สะอาดตา สำหรับภาษาอังกฤษ) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
         :root {
-            --primary-color: #1a2e40; /* น้ำเงินเข้มสุภาพตามภาพ */
-            --accent-blue: #0d6efd; /* น้ำเงินสว่างปุ่ม EN */
-            --bg-minimal: #fbf9f6; /* พื้นหลังมินิมอลโทนอุ่นนวลตาตามภาพ */
+            --primary-color: #1a2e40; /* น้ำเงินเข้มสุภาพ */
+            --accent-blue: #0d6efd; /* น้ำเงินไฮไลท์ */
+            --bg-minimal: #fbf9f6; /* พื้นหลังมินิมอลโทนอุ่นนวลตา */
             --text-dark: #1e293b;
         }
 
         body {
-            font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+            font-family: 'Inter', sans-serif;
             color: var(--text-dark);
             background-color: #ffffff;
             scroll-behavior: smooth;
@@ -48,7 +48,7 @@
             color: var(--accent-blue) !important;
         }
 
-        /* Hero Section (แบบมินิมอลตามภาพแนบ) */
+        /* Hero Section */
         .hero-section {
             padding: 160px 0 120px 0;
             background-color: var(--bg-minimal);
@@ -149,39 +149,18 @@
             color: var(--accent-blue);
         }
 
-        /* กล่องแสดงเกรด GPAX ลูกเล่นมินิมอล */
+        /* กล่องแสดงเกรด GPAX */
         .gpax-box {
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             border-left: 4px solid var(--primary-color);
             border-radius: 8px;
             padding: 15px;
         }
-
-        /* ปุ่มภาษา */
-        .lang-btn {
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 4px 14px;
-            border: 1px solid #cbd5e1;
-            background-color: #ffffff;
-            color: #64748b;
-        }
-        .lang-btn.active-th {
-            background-color: transparent;
-            color: var(--primary-color);
-            border-color: #cbd5e1;
-        }
-        .lang-btn.active-en {
-            background-color: var(--accent-blue);
-            color: #ffffff;
-            border-color: var(--accent-blue);
-        }
     </style>
 </head>
 <body>
 
-    <!-- 1. Navbar (เปลี่ยนชื่อจาก About เป็น Education) -->
+    <!-- 1. Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
         <div class="container">
             <a class="navbar-brand" href="#">SONGKRAN.P</a>
@@ -189,17 +168,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-2">
-                    <li class="nav-item"><a class="nav-link" href="#home" data-lang-th="หน้าแรก" data-lang-en="Home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education" data-lang-th="การศึกษา" data-lang-en="Education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills" data-lang-th="ทักษะ" data-lang-en="Skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects" data-lang-th="ผลงาน" data-lang-en="Projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certificates" data-lang-th="ใบรับรอง" data-lang-en="Certificates">Certificates</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">Contact</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <button class="btn lang-btn" id="btn-th" onclick="switchLang('th')">TH</button>
-                        <button class="btn lang-btn active-en" id="btn-en" onclick="switchLang('en')">EN</button>
-                    </li>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -210,19 +185,18 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 text-center text-lg-start mb-5 mb-lg-0">
-                    <span class="hero-badge mb-3 d-inline-block" data-lang-th="ยินดีต้อนรับสู่พอร์ตโฟลิโอ" data-lang-en="Welcome to Portfolio">Welcome to Portfolio</span>
-                    <h1 class="hero-title mb-3" data-lang-th="สงกรานต์ หนูน้อย" data-lang-en="Songkran Noonoi">Songkran Noonoi</h1>
-                    <p class="lead text-muted mb-4 fs-5 pe-lg-5" data-lang-th="ดิฉันเป็นนิสิตสาขาธุรกิจดิจิทัลและระบบสารสนเทศ มหาวิทยาลัยมหาสารคาม กำลังมองหาโอกาสฝึกงานในตำแหน่ง Web Developer มีความสนใจในการพัฒนาเว็บไซต์ทั้งส่วน Front-end และ Back-end รวมถึงการสร้างเว็บแอปพลิเคชันที่ตอบสนองต่อทุกอุปกรณ์ (Responsive Web Design) และมอบประสบการณ์การใช้งานที่ดีให้กับผู้ใช้ มีพื้นฐานการพัฒนาเว็บไซต์ด้วย HTML, CSS, JavaScript, PHP, MySQL, Bootstrap และ Git/GitHub พร้อมนำความรู้และทักษะที่ได้เรียนมาประยุกต์ใช้ในการทำงานจริง พัฒนาความสามารถด้านการแก้ไขปัญหา และเรียนรู้เทคโนโลยีใหม่ ๆ อย่างต่อเนื่อง เพื่อเติบโตเป็นนักพัฒนาเว็บไซต์ที่มีคุณภาพและสามารถสร้างคุณค่าให้กับองค์กรได้" 
-                    data-lang-en="I am an undergraduate student in Digital Business and Information Systems at Mahasarakham University, seeking an internship opportunity as a Web Developer. I have a strong interest in front-end and back-end web development and enjoy building responsive, user-friendly web applications. My technical skills include HTML, CSS, JavaScript, PHP, MySQL, Bootstrap, and Git/GitHub. I am eager to apply my academic knowledge and practical skills to real-world projects, continuously improve my abilities, and contribute to a collaborative development team.">An energetic Computer Science/Engineering student seeking a Web Developer co-op position. Passionate about building responsive and user-friendly web applications, and eager to apply classroom knowledge to real-world development teams.</p>
+                    <span class="hero-badge mb-3 d-inline-block">Welcome to Portfolio</span>
+                    <h1 class="hero-title mb-3">Hello, I'm Songkran</h1>
+                    <p class="lead text-muted mb-4 fs-5 pr-lg-5">An energetic Computer Science/Engineering student seeking a Web Developer co-op position. Passionate about building responsive and user-friendly web applications, and eager to apply classroom knowledge to real-world development teams.</p>
                     
                     <div class="d-flex justify-content-center justify-content-lg-start flex-wrap gap-3">
-                        <a href="#projects" class="btn btn-custom-dark" data-lang-th="ดูผลงานของฉัน" data-lang-en="View My Work">View My Work</a>
+                        <a href="#projects" class="btn btn-custom-dark">View My Work</a>
                         
-                        <a href="resume.pdf" target="_blank" class="btn btn-custom-outline border-primary text-primary" data-lang-th="ดาวน์โหลด Resume" data-lang-en="Download Resume">
+                        <a href="resume.pdf" target="_blank" class="btn btn-custom-outline border-primary text-primary">
                             <i class="bi bi-download me-1"></i> Download Resume
                         </a>
                         
-                        <a href="#contact" class="btn btn-custom-outline" data-lang-th="ติดต่อฉัน" data-lang-en="Contact Me">Contact Me</a>
+                        <a href="#contact" class="btn btn-custom-outline">Contact Me</a>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center d-flex align-items-center justify-content-center">
@@ -233,22 +207,22 @@
         </div>
     </section>
 
-    <!-- 3. Education Section (คงส่วนประวัติการศึกษาและเกรดไว้เดิม) -->
+    <!-- 3. Education Section -->
     <section id="education" class="py-5">
         <div class="container py-4">
-            <h2 class="section-title" data-lang-th="ประวัติการศึกษา" data-lang-en="Education">Education</h2>
+            <h2 class="section-title">Education</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="card card-custom p-4 shadow-sm">
-                        <h5 class="fw-bold text-primary-custom mb-3" data-lang-th="ข้อมูลการศึกษา & ผลการเรียนสะสม" data-lang-en="Academic Profile & Standing">Academic Profile & Standing</h5>
-                        <p class="mb-1 fw-semibold fs-5" data-lang-th="ปริญญาตรี สาขาธุรกิจดิจิทัลและระบบสารสนเทศ" data-lang-en="Bachelor of Digital Business and Information Systems">Bachelor of Digital Business and Information Systems</p>
-                        <p class="text-muted small mb-4" data-lang-th="พ.ศ. 2566 - ปัจจุบัน" data-lang-en="2023 - Present">2021 - Present</p>
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Academic Profile & Standing</h5>
+                        <p class="mb-1 fw-semibold fs-5">Bachelor of Science in Computer Science / IT</p>
+                        <p class="text-muted small mb-4">2021 - Present</p>
                         
-                        <!-- ข้อมูล GPAX มินิมอล -->
+                        <!-- ข้อมูล GPAX -->
                         <div class="gpax-box d-flex align-items-center justify-content-between">
                             <div>
-                                <span class="fw-bold text-secondary text-uppercase small d-block" data-lang-th="ผลการเรียนเฉลี่ยสะสม" data-lang-en="Cumulative GPAX">Cumulative GPAX</span>
-                                <span class="fs-2 fw-bold text-primary-custom" style="color: var(--primary-color);">3.75</span> <span class="text-muted small">/ 4.00</span>
+                                <span class="fw-bold text-secondary text-uppercase small d-block">Cumulative GPAX</span>
+                                <span class="fs-2 fw-bold" style="color: var(--primary-color);">3.50</span> <span class="text-muted small">/ 4.00</span>
                             </div>
                             <div class="fs-1 text-muted opacity-25" style="color: var(--primary-color);"><i class="bi bi-mortarboard-fill"></i></div>
                         </div>
@@ -261,25 +235,25 @@
     <!-- 4. Skills Section -->
     <section id="skills" class="py-5 bg-light">
         <div class="container py-4">
-            <h2 class="section-title" data-lang-th="ทักษะความสามารถ" data-lang-en="Skills & Expertise">Skills & Expertise</h2>
+            <h2 class="section-title">Skills & Expertise</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card card-custom p-4 h-100">
-                        <div class="text-primary-custom fs-2 mb-3"><i class="bi bi-code-slash"></i></div>
+                        <div class="fs-2 mb-3" style="color: var(--primary-color);"><i class="bi bi-code-slash"></i></div>
                         <h5 class="fw-bold">Frontend Development</h5>
-                        <p class="text-muted small mb-0">HTML5, CSS, JavaScript, Bootstrap 5</p>
+                        <p class="text-muted small mb-0">HTML5, CSS3, JavaScript, Bootstrap 5</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card card-custom p-4 h-100">
-                        <div class="text-primary-custom fs-2 mb-3"><i class="bi bi-database"></i></div>
+                        <div class="fs-2 mb-3" style="color: var(--primary-color);"><i class="bi bi-database"></i></div>
                         <h5 class="fw-bold">Backend & Data</h5>
                         <p class="text-muted small mb-0">Node.js, SQL, Data Mining, RapidMiner</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card card-custom p-4 h-100">
-                        <div class="text-primary-custom fs-2 mb-3"><i class="bi bi-tools"></i></div>
+                        <div class="fs-2 mb-3" style="color: var(--primary-color);"><i class="bi bi-tools"></i></div>
                         <h5 class="fw-bold">Tools & Others</h5>
                         <p class="text-muted small mb-0">Git, GitHub, Vercel, Figma</p>
                     </div>
@@ -291,14 +265,14 @@
     <!-- 5. Projects Section -->
     <section id="projects" class="py-5">
         <div class="container py-4">
-            <h2 class="section-title" data-lang-th="ผลงานของฉัน" data-lang-en="My Projects">My Projects</h2>
+            <h2 class="section-title">My Projects</h2>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                     <a href="https://github.com/Songkran-Noonoi/suicide-risk-prediction-rapidminer" target="_blank" class="card card-custom h-100 overflow-hidden clickable-card">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500" class="card-img-top" alt="Project 1" style="height: 200px; object-fit: cover;">
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-primary-custom project-title">Suicide Risk Prediction</h5>
-                            <p class="card-text text-muted small" data-lang-th="ระบบทำนายความเสี่ยงการฆ่าตัวตายโดยใช้เครื่องมือ RapidMiner ในการทำเหมืองข้อมูล" data-lang-en="Suicide risk prediction system utilizing RapidMiner for data mining and analysis.">Suicide risk prediction system utilizing RapidMiner for data mining and analysis.</p>
+                            <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">Suicide Risk Prediction</h5>
+                            <p class="card-text text-muted small">Suicide risk prediction system utilizing RapidMiner for data mining and analysis.</p>
                             <span class="badge bg-light text-dark border rounded-pill px-3 py-1">RapidMiner</span>
                         </div>
                     </a>
@@ -307,8 +281,8 @@
                     <a href="https://github.com/Songkran-Noonoi/cosmetics-ecommerce" target="_blank" class="card card-custom h-100 overflow-hidden clickable-card">
                         <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=500" class="card-img-top" alt="Project 2" style="height: 200px; object-fit: cover;">
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-primary-custom project-title">Cosmetics E-Commerce</h5>
-                            <p class="card-text text-muted small" data-lang-th="โปรเจกต์ร้านค้าเครื่องสำอางออนไลน์ มีระบบหน้าร้าน ตะกร้าสินค้า และการจัดการข้อมูลเบื้องต้น" data-lang-en="Online cosmetics store featuring shopping cart functionality and basic data management.">Online cosmetics store featuring shopping cart functionality and basic data management.</p>
+                            <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">Cosmetics E-Commerce</h5>
+                            <p class="card-text text-muted small">Online cosmetics store featuring shopping cart functionality and basic data management.</p>
                             <span class="badge bg-light text-dark border rounded-pill px-3 py-1">Web App</span>
                         </div>
                     </a>
@@ -317,8 +291,8 @@
                     <a href="https://github.com/Songkran-Noonoi/icu-length-of-stay-prediction" target="_blank" class="card card-custom h-100 overflow-hidden clickable-card">
                         <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=500" class="card-img-top" alt="Project 3" style="height: 200px; object-fit: cover;">
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-primary-custom project-title">ICU Stay Prediction</h5>
-                            <p class="card-text text-muted small" data-lang-th="โมเดลการวิเคราะห์เพื่อคาดการณ์ระยะเวลาการพักรักษาตัวของผู้ป่วยในห้องวิกฤต (ICU)" data-lang-en="Predictive model analyzing and forecasting the duration of patient stays in the Intensive Care Unit (ICU).">Predictive model analyzing and forecasting the duration of patient stays in the Intensive Care Unit (ICU.</p>
+                            <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">ICU Stay Prediction</h5>
+                            <p class="card-text text-muted small">Predictive model analyzing and forecasting the duration of patient stays in the Intensive Care Unit (ICU).</p>
                             <span class="badge bg-light text-dark border rounded-pill px-3 py-1">Data Science</span>
                         </div>
                     </a>
@@ -330,14 +304,14 @@
     <!-- 6. Certificates Section -->
     <section id="certificates" class="py-5 bg-light">
         <div class="container py-4">
-            <h2 class="section-title" data-lang-th="ใบรับรอง" data-lang-en="Certificates">Certificates</h2>
+            <h2 class="section-title">Certificates</h2>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                     <div class="card card-custom h-100 overflow-hidden clickable-card" data-bs-toggle="modal" data-bs-target="#certModal1">
                         <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=500" class="card-img-top" alt="Cert 1" style="height: 180px; object-fit: cover;">
                         <div class="card-body p-4">
-                            <h5 class="fw-bold text-primary-custom" data-lang-th="เกียรติบัตรนักกิจกรรมดีเด่น" data-lang-en="Outstanding Academic Activity Certificate">Outstanding Academic Activity Certificate</h5>
-                            <p class="text-muted small mb-0" data-lang-th="ได้รับมอบหมายจากมหาวิทยาลัยจากการเข้าร่วมกิจกรรมส่งเสริมวิชาการ" data-lang-en="Awarded by the university for exemplary academic activities.">Awarded by the university for exemplary academic activities.</p>
+                            <h5 class="fw-bold" style="color: var(--primary-color);">Outstanding Academic Activity Certificate</h5>
+                            <p class="text-muted small mb-0">Awarded by the university for exemplary academic activities.</p>
                         </div>
                     </div>
                 </div>
@@ -350,15 +324,15 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content border-0" style="border-radius: 16px;">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold text-primary-custom" data-lang-th="รายละเอียดใบรับรอง" data-lang-en="Certificate Details">Certificate Details</h5>
+                    <h5 class="modal-title fw-bold" style="color: var(--primary-color);">Certificate Details</h5>
                     <button type="button" class="btn-close" data-bs-close="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center p-4">
                     <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded mb-4 shadow-sm" alt="Full Cert">
-                    <h4 class="fw-bold text-primary-custom mb-2" data-lang-th="เกียรติบัตรนักกิจกรรมดีเด่น" data-lang-en="Outstanding Academic Activity Certificate">Outstanding Academic Activity Certificate</h4>
-                    <p class="text-muted small" data-lang-th="เกียรติบัตรฉบับนี้ให้ไว้เพื่อแสดงว่า นายสงกรานต์ ได้เข้าร่วมและขับเคลื่อนกิจกรรมพัฒนานักศึกษา ประจำปีการศึกษา 2568 มีบทบาทสำคัญในการจัดงานนิทรรศการเทคโนโลยีและนวัตกรรมคอมพิวเตอร์" data-lang-en="This certificate is proudly presented to Mr. Songkran for outstanding contributions to student development activities in Academic Year 2025, coordinating tech exhibitions.">This certificate is proudly presented to Mr. Songkran for outstanding contributions to student development activities in Academic Year 2025, coordinating tech exhibitions.</p>
+                    <h4 class="fw-bold mb-2" style="color: var(--primary-color);">Outstanding Academic Activity Certificate</h4>
+                    <p class="text-muted small">This certificate is proudly presented to Mr. Songkran for outstanding contributions to student development activities in Academic Year 2025, coordinating tech exhibitions.</p>
                     <hr class="opacity-10">
-                    <p class="text-secondary small mb-0" data-lang-th="ออกให้โดย: คณะวิทยาศาสตร์และเทคโนโลยี | วันที่ออก: 15 มกราคม 2569" data-lang-en="Issued by: Faculty of Science and Technology | Date: Jan 15, 2026">Issued by: Faculty of Science and Technology | Date: Jan 15, 2026</p>
+                    <p class="text-secondary small mb-0">Issued by: Faculty of Science and Technology | Date: Jan 15, 2026</p>
                 </div>
             </div>
         </div>
@@ -367,17 +341,17 @@
     <!-- 7. Contact Section -->
     <section id="contact" class="py-5">
         <div class="container py-4">
-            <h2 class="section-title center text-center" data-lang-th="ช่องทางการติดต่อ" data-lang-en="Contact Me">Contact Me</h2>
+            <h2 class="section-title center text-center">Contact Me</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="card card-custom p-4 text-center">
                         <div class="d-flex flex-column gap-3 align-items-center">
                             <div class="d-flex align-items-center gap-2">
-                                <i class="bi bi-envelope-fill text-primary-custom fs-5"></i>
+                                <i class="bi bi-envelope-fill fs-5" style="color: var(--primary-color);"></i>
                                 <span>Songkran.P@example.com</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
-                                <i class="bi bi-github text-primary-custom fs-5"></i>
+                                <i class="bi bi-github fs-5" style="color: var(--primary-color);"></i>
                                 <a href="https://github.com/Songkran-Noonoi" target="_blank" class="text-decoration-none text-dark fw-bold">GitHub: Songkran-Noonoi</a>
                             </div>
                         </div>
@@ -396,28 +370,5 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Script ควบคุมการสลับภาษา -->
-    <script>
-        function switchLang(lang) {
-            const elements = document.querySelectorAll('[data-lang-th]');
-            elements.forEach(el => {
-                if (lang === 'th') {
-                    el.textContent = el.getAttribute('data-lang-th');
-                } else {
-                    el.textContent = el.getAttribute('data-lang-en');
-                }
-            });
-
-            // ควบคุมสีไฮไลท์ปุ่มภาษา
-            if (lang === 'th') {
-                document.getElementById('btn-th').className = 'btn lang-btn active-en bg-primary text-white'; 
-                document.getElementById('btn-en').className = 'btn lang-btn active-th';
-            } else {
-                document.getElementById('btn-th').className = 'btn lang-btn active-th';
-                document.getElementById('btn-en').className = 'btn lang-btn active-en';
-            }
-        }
-    </script>
 </body>
 </html>
