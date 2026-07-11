@@ -302,64 +302,39 @@
     </section>
 
     <!-- 6. Certificates Section -->
+    <!-- 6. Certificates Section -->
     <section id="certificates" class="py-5 bg-light">
         <div class="container py-4">
-            <h2 class="section-title">Certificates</h2>
-            <div class="row g-4">
-                
-                <!-- การ์ดใบที่ 1: AUCC 2026 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100 overflow-hidden clickable-card" data-bs-toggle="modal" data-bs-target="#auccModal">
-                        <!-- รูปหน้าปกการ์ด -->
-                        <img src="AUCC.jpg" class="card-img-top" alt="AUCC 2026" style="height: 180px; object-fit: cover; object-position: center;">
-                        <div class="card-body p-4">
-                            <span class="badge bg-warning text-dark rounded-pill px-3 py-1 mb-2 fw-semibold">Very Good Award</span>
-                            <h5 class="fw-bold" style="color: var(--primary-color);">AUCC 2026 Presentation</h5>
-                            <p class="text-muted small mb-0">Presented an oral research paper at the 14th Asia Undergraduate Conference on Computing.</p>
+            <h2 class="section-title text-center mb-5">Certificates & Achievements</h2>
+            
+            <!-- ========================================== -->
+            <!-- 🏆 TOP HIGHLIGHT:รางวัลระดับชาติ (เด่นสุด ขนาดใหญ่ จัดกึ่งกลาง) -->
+            <!-- ========================================== -->
+            <div class="row mb-5">
+                <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                    <div class="card card-custom h-100 overflow-hidden clickable-card border border-warning shadow" data-bs-toggle="modal" data-bs-target="#auccModal" style="transform: scale(1.02); transition: all 0.3s ease;">
+                        <div class="position-relative">
+                            <img src="AUCC.jpg" class="card-img-top" alt="AUCC 2026" style="height: 280px; object-fit: cover; object-position: center;">
+                            <span class="position-absolute top-0 end-0 bg-warning text-dark fw-bold px-3 py-2 m-3 rounded-pill shadow-sm" style="font-size: 0.85rem;">
+                                🏆 Featured Achievement
+                            </span>
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <span class="badge bg-warning text-dark rounded-pill px-3 py-1 mb-2 fw-bold" style="font-size: 0.9rem;">Very Good Oral Presentation Award</span>
+                            <h4 class="fw-bold my-2" style="color: var(--primary-color);">AUCC 2026 National Presentation</h4>
+                            <p class="text-muted mb-0 mx-auto" style="max-width: 500px;">
+                                Awarded "Very Good" level for an outstanding oral research paper presentation titled <strong>"Financial Fraud Detection Using Machine Learning Techniques"</strong> at The 14th Asia Undergraduate Conference on Computing.
+                            </p>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </section>
 
-    <!-- ========================================== -->
-    <!-- Popup Modal สำหรับ AUCC 2026 (แสดงไฟล์ JPG) -->
-    <!-- ========================================== -->
-    <div class="modal fade" id="auccModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content border-0" style="border-radius: 16px;">
-                <div class="modal-header border-0 pb-0">
-                    <h5 class="modal-title fw-bold" style="color: var(--primary-color);">Certificate Details</h5>
-                    <button type="button" class="btn-close" data-bs-close="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4 text-center">
-                    <!-- แสดงรูปเกียรติบัตรฉบับเต็ม -->
-                    <img src="AUCC.jpg" class="img-fluid rounded-3 mb-4 shadow-sm" alt="AUCC 2026 Certificate Full" style="max-height: 500px; width: auto;">
-                    
-                    <!-- รายละเอียดภาษาอังกฤษ -->
-                    <h4 class="fw-bold mb-1" style="color: var(--primary-color);">Very Good Oral Presentation Award</h4>
-                    <p class="text-muted mb-3 fw-medium" style="font-size: 0.95rem;">The 14th Asia Undergraduate Conference on Computing (AUCC 2026)</p>
-                    
-                    <div class="p-3 bg-light rounded-3 mb-3 text-start">
-                        <p class="mb-1 text-secondary small text-uppercase fw-bold">Research Paper Title:</p>
-                        <p class="mb-0 fw-semibold text-dark" style="font-size: 1.05rem;">"Financial Fraud Detection Using Machine Learning Techniques"</p>
-                    </div>
+            <hr class="my-5" style="border-top: 2px dashed #cbd5e1; opacity: 0.5;">
 
-                    <div class="d-flex flex-wrap justify-content-between text-secondary small pt-2 border-top text-start">
-                        <span><strong>Hosted by:</strong> Rambhai Barni Rajabhat University</span>
-                        <span><strong>Date:</strong> February 4-6, 2026</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-            <!-- 6. Certificates Section -->
-    <section id="certificates" class="py-5 bg-light">
-        <div class="container py-4">
-            <h2 class="section-title">Certificates</h2>
+            <!-- ========================================== -->
+            <!-- 📑 OTHER CERTIFICATES GRID (แถวละ 3 ใบ เรียงตามความสำคัญ) -->
+            <!-- ========================================== -->
             <div class="row g-4">
                 
                 <!-- 1. Web Development (THAI MOOC) -->
@@ -368,7 +343,7 @@
                         <img src="web.jpg" class="card-img-top" alt="Web Development" style="height: 180px; object-fit: cover;">
                         <div class="card-body p-4">
                             <span class="badge bg-success text-white rounded-pill px-3 py-1 mb-2 fw-semibold">Direct Tech Skill</span>
-                            <h5 class="fw-bold" style="color: var(--primary-color);">Responsive Web Design & Development</h5>
+                            <h5 class="fw-bold" style="color: var(--primary-color);">Responsive Web Design</h5>
                             <p class="text-muted small mb-0">Certified 12-hour professional course on building mobile-responsive web applications by THAI MOOC.</p>
                         </div>
                     </div>
@@ -380,7 +355,7 @@
                         <img src="CertIC3.jpg" class="card-img-top" alt="IC3" style="height: 180px; object-fit: cover;">
                         <div class="card-body p-4">
                             <span class="badge bg-primary text-white rounded-pill px-3 py-1 mb-2 fw-semibold">Global Standard</span>
-                            <h5 class="fw-bold" style="color: var(--primary-color);">IC3 Digital Literacy Certification</h5>
+                            <h5 class="fw-bold" style="color: var(--primary-color);">IC3 Digital Literacy</h5>
                             <p class="text-muted small mb-0">Global standard certification for tech basics, digital citizenship, and information management.</p>
                         </div>
                     </div>
@@ -428,7 +403,7 @@
                         <img src="Cert_smo.jpg" class="card-img-top" alt="Student Committee" style="height: 180px; object-fit: cover;">
                         <div class="card-body p-4">
                             <span class="badge bg-secondary text-white rounded-pill px-3 py-1 mb-2 fw-semibold">Leadership</span>
-                            <h5 class="fw-bold" style="color: var(--primary-color);">Student Committee Public Relations</h5>
+                            <h5 class="fw-bold" style="color: var(--primary-color);">Student Committee PR Lead</h5>
                             <p class="text-muted small mb-0">Served as the PR Lead for the Student Committee Executive Board at MBS Faculty.</p>
                         </div>
                     </div>
@@ -440,7 +415,7 @@
                         <img src="CertActivist.jpg" class="card-img-top" alt="Outstanding Activist" style="height: 180px; object-fit: cover;">
                         <div class="card-body p-4">
                             <span class="badge bg-secondary text-white rounded-pill px-3 py-1 mb-2 fw-semibold">Soft Skills</span>
-                            <h5 class="fw-bold" style="color: var(--primary-color);">Outstanding Student Activist Award</h5>
+                            <h5 class="fw-bold" style="color: var(--primary-color);">Outstanding Student Activist</h5>
                             <p class="text-muted small mb-0">Recognized as an outstanding student activist for organizing impactful university-wide events.</p>
                         </div>
                     </div>
