@@ -1,5 +1,246 @@
-Songkran Portfolio
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 
+        <style>
+        /* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-    ยินดีต้อนรับสู่เว็บของ สงกรานต์ ครับ! 🎉
-    เว็บนี้กำลังจะไปอยู่บน Vercel แล้วนะ
+body{
+    background:#f8fafc;
+    color:#333;
+    line-height:1.6;
+}
+
+/* Container */
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* Header */
+header{
+    background:#ffffff;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    position:sticky;
+    top:0;
+}
+
+header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#2196F3;
+}
+
+/* Hero */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+    background:#eaf5ff;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 24px;
+    background:#2196F3;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1976D2;
+}
+
+/* Sections */
+.section{
+    padding:70px 0;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:35px;
+    color:#1565C0;
+}
+
+/* Cards */
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:300px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+/* Contact */
+#contact p{
+    text-align:center;
+    margin:10px 0;
+}
+
+/* Footer */
+footer{
+    background:#1565C0;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+header .container{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h2{
+    font-size:30px;
+}
+
+}
+    </style>
+
+</head>
+<body>
+
+    <!-- เมนู -->
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">หน้าแรก</a></li>
+                    <li><a href="#about">เกี่ยวกับฉัน</a></li>
+                    <li><a href="#portfolio">ผลงาน</a></li>
+                    <li><a href="#contact">ติดต่อ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- หน้าแรก -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>สวัสดีครับ 👋</h2>
+            <p>ยินดีต้อนรับสู่เว็บไซต์ Portfolio ของผม</p>
+            <a href="#portfolio" class="btn">ดูผลงาน</a>
+        </div>
+    </section>
+
+    <!-- เกี่ยวกับฉัน -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>เกี่ยวกับฉัน</h2>
+            <p>
+                ชื่อ: สงกรานต์ หนูน้อย <br>
+                นักศึกษาสาขาธุรกิจดิจิทัลและระบบสารสนเทศ
+                สนใจด้าน Web Development, UI/UX และ Cloud Computing
+            </p>
+        </div>
+    </section>
+
+    <!-- ผลงาน -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2>ผลงาน</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Project 1</h3>
+                    <p>ระบบลงทะเบียนเข้าร่วมกิจกรรมออนไลน์</p>
+                </div>
+
+                <div class="card">
+                    <h3>Project 2</h3>
+                    <p>เว็บไซต์ร้านค้าออนไลน์</p>
+                </div>
+
+                <div class="card">
+                    <h3>Project 3</h3>
+                    <p>Dashboard วิเคราะห์ข้อมูล</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ติดต่อ -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>ช่องทางติดต่อ</h2>
+
+            <p>Email : yourname@email.com</p>
+            <p>Facebook : facebook.com/yourname</p>
+            <p>GitHub : github.com/yourname</p>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 My Portfolio | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
