@@ -157,7 +157,7 @@
             padding: 15px;
         }
 
-        /* ปุ่มภาษา (สไตล์รูปแนบ) */
+        /* ปุ่มภาษา */
         .lang-btn {
             border-radius: 20px;
             font-weight: 600;
@@ -181,7 +181,7 @@
 </head>
 <body>
 
-    <!-- 1. Navbar -->
+    <!-- 1. Navbar (เปลี่ยนชื่อจาก About เป็น Education) -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
         <div class="container">
             <a class="navbar-brand" href="#">SONGKRAN.P</a>
@@ -191,7 +191,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-2">
                     <li class="nav-item"><a class="nav-link" href="#home" data-lang-th="หน้าแรก" data-lang-en="Home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about" data-lang-th="เกี่ยวกับฉัน" data-lang-en="About">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education" data-lang-th="การศึกษา" data-lang-en="Education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills" data-lang-th="ทักษะ" data-lang-en="Skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects" data-lang-th="ผลงาน" data-lang-en="Projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#certificates" data-lang-th="ใบรับรอง" data-lang-en="Certificates">Certificates</a></li>
@@ -205,7 +205,7 @@
         </div>
     </nav>
 
-    <!-- 2. Hero Section (จัดแบบมินิมอลตามภาพแนบ + ปรับข้อความสมัครสหกิจศึกษา) -->
+    <!-- 2. Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
@@ -214,7 +214,6 @@
                     <h1 class="hero-title mb-3" data-lang-th="สวัสดีครับ ผมสงกรานต์" data-lang-en="Hello, I'm Songkran">Hello, I'm Songkran</h1>
                     <p class="lead text-muted mb-4 fs-5 pe-lg-5" data-lang-th="นักศึกษาคอมพิวเตอร์ที่กำลังมองหาโอกาสเข้าฝึกงาน/สหกิจศึกษาในตำแหน่ง Web Developer มีความมุ่งมั่นในการพัฒนาเว็บแอปพลิเคชันที่ใช้งานง่าย และพร้อมที่จะนำความรู้ในห้องเรียนมาเรียนรู้และช่วยงานในทีมพัฒนาจริง" data-lang-en="An energetic Computer Science/Engineering student seeking a Web Developer co-op position. Passionate about building responsive and user-friendly web applications, and eager to apply classroom knowledge to real-world development teams.">An energetic Computer Science/Engineering student seeking a Web Developer co-op position. Passionate about building responsive and user-friendly web applications, and eager to apply classroom knowledge to real-world development teams.</p>
                     
-                    <!-- ปุ่มกลุ่มหลัก (เพิ่มปุ่มดาวน์โหลด Resume) -->
                     <div class="d-flex justify-content-center justify-content-lg-start flex-wrap gap-3">
                         <a href="#projects" class="btn btn-custom-dark" data-lang-th="ดูผลงานของฉัน" data-lang-en="View My Work">View My Work</a>
                         
@@ -226,38 +225,31 @@
                     </div>
                 </div>
                 <div class="col-lg-5 text-center d-flex align-items-center justify-content-center">
-                    <!-- เส้นแบ่งแนวตั้งข้างรูปภาพ -->
                     <div class="vertical-divider d-none d-lg-block"></div>
-                    <!-- รูปโปรไฟล์ ล็อกวงกลมขอบขาว + เลื่อนปรับรูปหน้าด้านในลงมาสวยงาม -->
                     <img src="my-profile.JPG" alt="Profile" class="img-fluid rounded-circle shadow-sm" style="width: 280px; height: 280px; object-fit: cover; object-position: center 20%; border: 6px solid #fff;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. About Me & GPAX Section -->
-    <section id="about" class="py-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-12">
-                    <h2 class="section-title" data-lang-th="เกี่ยวกับฉัน" data-lang-en="About Me">About Me</h2>
-                </div>
-                <div class="col-lg-6">
-                    <p class="text-muted lh-lg" data-lang-th="ผมเป็นคนที่ชื่นชอบการเรียนรู้สิ่งใหม่ ๆ ด้านเทคโนโลยี มีความสนใจเป็นพิเศษในการพัฒนาเว็บแอปพลิเคชันและการวิเคราะห์ข้อมูลเพื่อแก้ปัญหา มีความละเอียดรอบคอบในการทำงานและสามารถทำงานร่วมกับทีมได้เป็นอย่างดี" data-lang-en="I am passionate about learning new technologies, with a special interest in web application development and data analysis to solve complex problems. Detail-oriented, analytical, and an effective team player.">I am passionate about learning new technologies, with a special interest in web application development and data analysis to solve complex problems. Detail-oriented, analytical, and an effective team player.</p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card card-custom p-4">
-                        <h5 class="fw-bold text-primary-custom mb-3" data-lang-th="ประวัติการศึกษา & ผลการเรียน" data-lang-en="Education & Academic Standing">Education & Academic Standing</h5>
-                        <p class="mb-1 fw-semibold" data-lang-th="ปริญญาตรี สาขาวิทยาการคอมพิวเตอร์ / เทคโนโลยีสารสนเทศ" data-lang-en="Bachelor of Science in Computer Science / IT">Bachelor of Science in Computer Science / IT</p>
-                        <p class="text-muted small mb-3" data-lang-th="พ.ศ. 2564 - ปัจจุบัน" data-lang-en="2021 - Present">2021 - Present</p>
+    <!-- 3. Education Section (คงส่วนประวัติการศึกษาและเกรดไว้เดิม) -->
+    <section id="education" class="py-5">
+        <div class="container py-4">
+            <h2 class="section-title" data-lang-th="ประวัติการศึกษา" data-lang-en="Education">Education</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card card-custom p-4 shadow-sm">
+                        <h5 class="fw-bold text-primary-custom mb-3" data-lang-th="ข้อมูลการศึกษา & ผลการเรียนสะสม" data-lang-en="Academic Profile & Standing">Academic Profile & Standing</h5>
+                        <p class="mb-1 fw-semibold fs-5" data-lang-th="ปริญญาตรี สาขาวิทยาการคอมพิวเตอร์ / เทคโนโลยีสารสนเทศ" data-lang-en="Bachelor of Science in Computer Science / IT">Bachelor of Science in Computer Science / IT</p>
+                        <p class="text-muted small mb-4" data-lang-th="พ.ศ. 2564 - ปัจจุบัน" data-lang-en="2021 - Present">2021 - Present</p>
                         
                         <!-- ข้อมูล GPAX มินิมอล -->
                         <div class="gpax-box d-flex align-items-center justify-content-between">
                             <div>
                                 <span class="fw-bold text-secondary text-uppercase small d-block" data-lang-th="ผลการเรียนเฉลี่ยสะสม" data-lang-en="Cumulative GPAX">Cumulative GPAX</span>
-                                <span class="fs-3 fw-bold text-primary-custom">3.50</span> <span class="text-muted small">/ 4.00</span>
+                                <span class="fs-2 fw-bold text-primary-custom" style="color: var(--primary-color);">3.50</span> <span class="text-muted small">/ 4.00</span>
                             </div>
-                            <div class="fs-1 text-muted opacity-25"><i class="bi bi-mortarboard-fill"></i></div>
+                            <div class="fs-1 text-muted opacity-25" style="color: var(--primary-color);"><i class="bi bi-mortarboard-fill"></i></div>
                         </div>
                     </div>
                 </div>
@@ -325,7 +317,7 @@
                         <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=500" class="card-img-top" alt="Project 3" style="height: 200px; object-fit: cover;">
                         <div class="card-body p-4">
                             <h5 class="card-title fw-bold text-primary-custom project-title">ICU Stay Prediction</h5>
-                            <p class="card-text text-muted small" data-lang-th="โมเดลการวิเคราะห์เพื่อคาดการณ์ระยะเวลาการพักรักษาตัวของผู้ป่วยในห้องวิกฤต (ICU)" data-lang-en="Predictive model analyzing and forecasting the duration of patient stays in the Intensive Care Unit (ICU).">Predictive model analyzing and forecasting the duration of patient stays in the Intensive Care Unit (ICU).</p>
+                            <p class="card-text text-muted small" data-lang-th="โมเดลการวิเคราะห์เพื่อคาดการณ์ระยะเวลาการพักรักษาตัวของผู้ป่วยในห้องวิกฤต (ICU)" data-lang-en="Predictive model analyzing and forecasting the duration of patient stays in the Intensive Care Unit (ICU).">Predictive model analyzing and forecasting the duration of patient stays in the Intensive Care Unit (ICU.</p>
                             <span class="badge bg-light text-dark border rounded-pill px-3 py-1">Data Science</span>
                         </div>
                     </a>
