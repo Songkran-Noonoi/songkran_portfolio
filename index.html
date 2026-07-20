@@ -157,6 +157,23 @@
             padding: 15px;
         }
 
+        /* บีบข้อความในการ์ดให้เหลือ 2 บรรทัด */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/* สไตล์สำหรับการ์ดที่กดคลิกได้ */
+.card-clickable {
+    cursor: pointer;
+}
+/* ป้องกันไม่ให้เวลากดปุ่มลิงก์ด้านล่างแล้วมันไปกระตุ้นเปิด Popup ซ้อน */
+.card-clickable .btn {
+    position: relative;
+    z-index: 2;
+}
+
     </style>
 </head>
 <body>
@@ -188,12 +205,36 @@
                 <div class="col-lg-7 text-center text-lg-start mb-5 mb-lg-0">
                     <span class="hero-badge mb-3 d-inline-block">Welcome to Portfolio</span>
                     <h1 class="hero-title mb-3">Songkran Noonoi</h1>
-                    <p class="lead text-muted mb-4 fs-5 pr-lg-5">I am an undergraduate student in Digital Business and Information Systems at Mahasarakham University, seeking an internship opportunity as a Web Developer. I have a strong interest in front-end and back-end web development. I am eager to apply my academic knowledge and practical skills to real-world projects, continuously improve my abilities, and contribute to a collaborative development team.</p>
+                    <p id="aboutText" class="lead text-muted mb-2 fs-5 pr-lg-5" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; transition: all 0.3s ease;">
+    I am an undergraduate student in Digital Business and Information Systems at Mahasarakham University, seeking an internship opportunity as a Web Developer. I have a strong interest in front-end and back-end web development. I am eager to apply my academic knowledge and practical skills to real-world projects, continuously improve my abilities, and contribute to a collaborative development team.
+</p>
+
+<!-- 🔗 ปุ่มกด Read More / Read Less -->
+<div class="mb-4">
+    <a href="javascript:void(0);" id="aboutReadMoreBtn" class="text-primary fw-bold text-decoration-none" style="font-size: 0.95rem;" onclick="toggleAboutDescription()">Read More...</a>
+</div>
+
+<!-- ⚙️ JavaScript สำหรับควบคุมการเปิด-ปิด (แยก id อิสระไม่ให้ตีกับระบบการ์ด) -->
+<script>
+function toggleAboutDescription() {
+    const textZone = document.getElementById('aboutText');
+    const btn = document.getElementById('aboutReadMoreBtn');
+    
+    
+    if (textZone.style.webkitLineClamp === '3') {
+        textZone.style.webkitLineClamp = 'unset'; // ขยายข้อความทั้งหมดออกมา
+        btn.textContent = 'Read Less';
+    } else {
+        textZone.style.webkitLineClamp = '3'; // หดกลับมาเหลือ 2 บรรทัด 
+        btn.textContent = 'Read More...';
+    }
+}
+</script>
                     
                     <div class="d-flex justify-content-center justify-content-lg-start flex-wrap gap-3">
                         <a href="#projects" class="btn btn-custom-dark">View My Work</a>
                         
-                        <a href="Songkran_Resume.pdf" target="_blank" class="btn btn-custom-outline border-primary text-primary">
+                        <a href="SongkranResume.pdf" target="_blank" class="btn btn-custom-outline border-primary text-primary">
                             <i class="bi bi-download me-1"></i> Download Resume
                         </a>
                         
@@ -215,7 +256,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="card card-custom p-4 shadow-sm">
-                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Academic Profile & Standing</h5>
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Mahasarakham Business School, Mahasarakham University</h5>
                         <p class="mb-1 fw-semibold fs-5">Bachelor of Digital Business and Information Systems</p>
                         <p class="text-muted small mb-4">2023 - Present</p>
                         
@@ -242,94 +283,182 @@
                     <div class="card card-custom p-4 h-100">
                         <div class="fs-2 mb-3" style="color: var(--primary-color);"><i class="bi bi-code-slash"></i></div>
                         <h5 class="fw-bold">Frontend Development</h5>
-                        <p class="text-muted small mb-0">HTML5, CSS3, JavaScript, Bootstrap 5</p>
+                        <p class="text-muted small mb-0">HTML/CSS, JavaScript, Bootstrap , Chart.js</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card card-custom p-4 h-100">
                         <div class="fs-2 mb-3" style="color: var(--primary-color);"><i class="bi bi-database"></i></div>
                         <h5 class="fw-bold">Backend & Data</h5>
-                        <p class="text-muted small mb-0">PHP, MySQL, SQL, Oracle Database</p>
+                        <p class="text-muted small mb-0">PHP, SQL (MySQL, Oracle), Python, Java, R, Data Structures and Algorithms</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card card-custom p-4 h-100">
                         <div class="fs-2 mb-3" style="color: var(--primary-color);"><i class="bi bi-tools"></i></div>
                         <h5 class="fw-bold">Tools & Others</h5>
-                        <p class="text-muted small mb-0">Git, GitHub, Visual Studio Code, Vercel, Figma</p>
+                        <p class="text-muted small mb-0">Git, GitHub, VS Code, WinSCP, Vercel, RStudio, OOAD/UML Modeling, Google OAuth 2.0</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-custom p-4 h-100">
+                        <div class="fs-2 mb-3" style="color: var(--primary-color);"><i class="bi bi-translate"></i></div>
+                        <h5 class="fw-bold">Language Proficiency</h5>
+                        <p class="text-muted small mb-0">Thai (Native), English (CEFR B2 – Institutional Exit Exam)</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+ <!-- 5. Projects Section -->
+<section id="projects" class="py-5">
+    <div class="container py-4">
+        <h2 class="section-title">My Projects</h2>
+        <div class="row g-4">
+
+            <!-- 🟢 โปรเจกต์ที่ 1: SmartEvent -->
+            <div class="col-md-6 col-lg-4">
+                <!-- 🎯 ใส่ data-bs-toggle และ target ไว้ที่ตัวการ์ดโดยตรง -->
+                <div class="card card-custom h-100 overflow-hidden card-clickable" data-bs-toggle="modal" data-bs-target="#projectModal1" style="transition: all 0.3s ease;">
+                    <img src="SmartEven.jpg" class="card-img-top" alt="SmartEvent" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">SmartEvent</h5>
+                        
+                        <!-- ข้อความแสดง 2 บรรทัด -->
+                        <p class="card-text text-muted small flex-grow-1 mb-3 line-clamp-2">
+                            A full-stack intelligent event registration management system featuring a secure Payment Gateway API (Sandbox) for automated tokenized transactions and E-Ticket generation. It integrates Google OAuth 2.0 for streamlined authentication and implements role-based access control with a robust MySQL backend.
+                        </p>
+                        
+                        <div class="mb-3">
+                            <span class="badge bg-light text-dark border rounded-pill px-3 py-1">Web App</span>
+                        </div>
+                        <div class="mt-auto">
+                            <!-- ใช้ สต็อปพรอพาเกชัน (stopPropagation) เพื่อไม่ให้กดปุ่มแล้ว Popup เด้งซ้อน -->
+                            <a href="#" target="_blank" class="btn btn-sm btn-dark w-100 fw-bold rounded-pill shadow-sm" onclick="event.stopPropagation();">
+                                <i class="fab fa-github me-1"></i> GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- 5. Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container py-4">
-            <h2 class="section-title">My Projects</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                     <a href="https://github.com/Songkran-Noonoi/cosmetics-ecommerce" target="_blank" class="card card-custom h-100 overflow-hidden clickable-card">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=500" class="card-img-top" alt="Project 2" style="height: 200px; object-fit: cover;">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">Cosmetics E-Commerce</h5>
-                            <p class="card-text text-muted small">Online cosmetics store featuring shopping cart functionality and basic data management.</p>
+            <!-- 🟢 โปรเจกต์ที่ 2: Cosmetics E-Commerce -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-custom h-100 overflow-hidden card-clickable" data-bs-toggle="modal" data-bs-target="#projectModal2" style="transition: all 0.3s ease;">
+                    <img src="Glowery.jpg" class="card-img-top" alt="Cosmetics E-Commerce" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">Cosmetics E-Commerce</h5>
+                        
+                        <p class="card-text text-muted small flex-grow-1 mb-3 line-clamp-2">
+                            Online cosmetics store featuring shopping cart functionality and a backend system for basic data management via CRUD operations. It is integrated with a backend system to manage user and product data securely.
+                        </p>
+                        
+                        <div class="mb-3">
                             <span class="badge bg-light text-dark border rounded-pill px-3 py-1">Web App</span>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="https://github.com/Songkran-Noonoi/suicide-risk-prediction-rapidminer" target="_blank" class="card card-custom h-100 overflow-hidden clickable-card">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500" class="card-img-top" alt="Project 1" style="height: 200px; object-fit: cover;">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">Suicide Risk Prediction</h5>
-                            <p class="card-text text-muted small">Data Mining and Predictive Analytics for Suicide Risk Assessment: An Altair AI Studio Approach</p>
-                            <span class="badge bg-light text-dark border rounded-pill px-3 py-1">RapidMiner</span>
+                        <div class="mt-auto">
+                            <a href="https://github.com/Songkran-Noonoi/cosmetics-ecommerce" target="_blank" class="btn btn-sm btn-dark w-100 fw-bold rounded-pill shadow-sm" onclick="event.stopPropagation();">
+                                <i class="fab fa-github me-1"></i> GitHub
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="https://github.com/Songkran-Noonoi/icu-length-of-stay-prediction" target="_blank" class="card card-custom h-100 overflow-hidden clickable-card">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=500" class="card-img-top" alt="Project 3" style="height: 200px; object-fit: cover;">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">ICU Stay Prediction</h5>
-                            <p class="card-text text-muted small">Predictive Modeling for ICU Length of Stay Forecasting: An RStudio Approach</p>
-                            <span class="badge bg-light text-dark border rounded-pill px-3 py-1">Data Science</span>
-                        </div>
-                    </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+            
+            <!-- 🟢 โปรเจกต์ที่ 3: Suicide Risk Prediction -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-custom h-100 overflow-hidden card-clickable" data-bs-toggle="modal" data-bs-target="#projectModal3" style="transition: all 0.3s ease;">
+                    <img src="DA.jpg" class="card-img-top" alt="Suicide Risk" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">Classification Approach for Early Prediction of Suicide Risk</h5>
+                        
+                        <p class="card-text text-muted small flex-grow-1 mb-3 line-clamp-2">
+                            Data Mining and Predictive Analytics for Suicide Risk Assessment: An Altair AI Studio Approach. This study explores the application of various machine learning algorithms to evaluate and identify early indicators of mental health vulnerability.
+                        </p>
+                        
+                        <div class="mb-3">
+                            <span class="badge bg-light text-dark border rounded-pill px-3 py-1">Altair AI Studio(RapidMiner)</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://github.com/Songkran-Noonoi/suicide-risk-prediction-rapidminer" target="_blank" class="btn btn-sm btn-dark flex-fill fw-bold rounded-pill shadow-sm" onclick="event.stopPropagation();">
+                                <i class="fab fa-github me-1"></i> GitHub
+                            </a>
+                            <a href="SuicideRisk.pdf" target="_blank" class="btn btn-sm btn-outline-primary flex-fill fw-bold rounded-pill shadow-sm" onclick="event.stopPropagation();">
+                                📄 View Paper
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- 6. Certificates Section -->
+            <!-- 🟢 โปรเจกต์ที่ 4: ICU Length of Stay Prediction -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-custom h-100 overflow-hidden card-clickable" data-bs-toggle="modal" data-bs-target="#projectModal4" style="transition: all 0.3s ease;">
+                    <img src="ICU.jpg" class="card-img-top" alt="ICU Analytics" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h5 class="card-title fw-bold project-title" style="color: var(--primary-color);">Performance Comparison of Shock Index and Vital Index...</h5>
+                        
+                        <p class="card-text text-muted small flex-grow-1 mb-3 line-clamp-2">
+                            Predictive Modeling for ICU Length of Stay Forecasting: An RStudio Approach. This analytical project conducts a comprehensive performance comparison between Shock Index and Vital Index metrics to optimize intensive care resource utilization.
+                        </p>
+                        
+                        <div class="mb-3">
+                            <span class="badge bg-light text-dark border rounded-pill px-3 py-1">RStudio</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://github.com/Songkran-Noonoi/icu-length-of-stay-prediction" target="_blank" class="btn btn-sm btn-dark flex-fill fw-bold rounded-pill shadow-sm" onclick="event.stopPropagation();">
+                                <i class="fab fa-github me-1"></i> GitHub
+                            </a>
+                            <a href="ICU_StayPrediction.pdf" target="_blank" class="btn btn-sm btn-outline-primary flex-fill fw-bold rounded-pill shadow-sm" onclick="event.stopPropagation();">
+                                📊 View Slides
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
     <!-- 6. Certificates Section -->
     <section id="certificates" class="py-5 bg-light">
         <div class="container py-4">
             <h2 class="section-title text-center mb-5">Certificates & Achievements</h2>
             
             <!-- ========================================== -->
-            <!-- 🏆 TOP HIGHLIGHT:รางวัลระดับชาติ (เด่นสุด ขนาดใหญ่ จัดกึ่งกลาง) -->
-            <!-- ========================================== -->
-            <div class="row mb-5">
-                <div class="col-12 col-md-8 col-lg-6 mx-auto">
-                    <div class="card card-custom h-100 overflow-hidden clickable-card border border-warning shadow" data-bs-toggle="modal" data-bs-target="#auccModal" style="transform: scale(1.02); transition: all 0.3s ease;">
-                        <div class="position-relative">
-                            <img src="AUCC1.jpg" class="card-img-top" alt="AUCC 2026" style="height: 280px; object-fit: cover; object-position: center;">
-                            <span class="position-absolute top-0 end-0 bg-warning text-dark fw-bold px-3 py-2 m-3 rounded-pill shadow-sm" style="font-size: 0.85rem;">
-                                🏆 Featured Achievement
-                            </span>
-                        </div>
-                        <div class="card-body p-4 text-center">
-                            <span class="badge bg-warning text-dark rounded-pill px-3 py-1 mb-2 fw-bold" style="font-size: 0.9rem;">Very Good Oral Presentation Award</span>
-                            <h4 class="fw-bold my-2" style="color: var(--primary-color);">AUCC 2026 National Presentation</h4>
-                            <p class="text-muted mb-0 mx-auto" style="max-width: 500px;">
-                                Awarded "Very Good" level for an outstanding oral research paper presentation titled <strong>"Financial Fraud Detection Using Machine Learning Techniques"</strong> at The 14th Asia Undergraduate Conference on Computing.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+<!-- 🏆 TOP HIGHLIGHT:รางวัลระดับชาติ (เด่นสุด ขนาดใหญ่ จัดกึ่งกลาง) -->
+<!-- ========================================== -->
+<div class="row mb-5">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto">
+        <div class="card card-custom h-100 overflow-hidden clickable-card border border-warning shadow" data-bs-toggle="modal" data-bs-target="#auccModal" style="transform: scale(1.02); transition: all 0.3s ease;">
+            <div class="position-relative">
+                <img src="AUCC1.jpg" class="card-img-top" alt="AUCC 2026" style="height: 280px; object-fit: cover; object-position: center;">
+                <span class="position-absolute top-0 end-0 bg-warning text-dark fw-bold px-3 py-2 m-3 rounded-pill shadow-sm" style="font-size: 0.85rem;">
+                    🏆 Featured Achievement
+                </span>
             </div>
+            <div class="card-body p-4 text-center">
+                <span class="badge bg-warning text-dark rounded-pill px-3 py-1 mb-2 fw-bold" style="font-size: 0.9rem;">Very Good Oral Presentation Award</span>
+                <h4 class="fw-bold my-2" style="color: var(--primary-color);">AUCC 2026 National Presentation</h4>
+                <p class="text-muted mb-3 mx-auto" style="max-width: 500px;">
+                    Awarded "Very Good" level for an outstanding oral research paper presentation titled <strong>"Financial Fraud Detection Using Machine Learning Techniques"</strong> at The 14th Asia Undergraduate Conference on Computing.
+                </p>
+                
+                <!-- 🔗 เพิ่มปุ่มลิงก์ไฟล์เปเปอร์วิจัยตรงนี้ -->
+                <div class="mt-3">
+                    <a href="AUCC2026.pdf" target="_blank" class="btn btn-outline-warning text-dark fw-bold px-4 rounded-pill shadow-sm" style="font-size: 0.9rem;" onclick="event.stopPropagation();">
+                        📄 View Research Paper
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 
             <hr class="my-5" style="border-top: 2px dashed #cbd5e1; opacity: 0.5;">
 
@@ -470,6 +599,8 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
     <!-- ========================================== -->
     <!-- ALL CERTIFICATE MODALS (POPUP ZONE) -->
     <!-- ========================================== -->
@@ -496,24 +627,26 @@
     </div>
 
     <!-- Modal 2: IC3 -->
-    <div class="modal fade" id="ic3Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content border-0" style="border-radius: 16px;">
-                <div class="modal-header border-0 bg-white d-flex align-items-center justify-content-between p-3 position-relative" style="z-index: 1060;">
-    <h5 class="modal-title fw-bold mb-0" style="color: var(--primary-color);">Certificate Details</h5>
-    <button type="button" class="btn-close ms-auto shadow-none" data-bs-dismiss="modal" aria-label="Close" style="cursor: pointer; position: relative; z-index: 1070;"></button>
-</div>
-                <div class="modal-body p-4 text-center">
-                    <img src="CertIC3.jpg" class="img-fluid rounded-3 mb-4 shadow-sm" style="max-height: 520px;">
-                    <h4 class="fw-bold mb-1" style="color: var(--primary-color);">IC3 Digital Literacy Certification</h4>
-                    <p class="text-muted mb-3 small">Global Standard Six - Level 1 (Issued by Certiport)</p>
-                    <div class="p-3 bg-light rounded-3 text-start small">
-                        <strong>Credentials Verified:</strong> Technology Basics, Digital Citizenship, Information Management, Content Creation, and Security.
-                    </div>
+<div class="modal fade" id="ic3Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0" style="border-radius: 16px;">
+            <div class="modal-header border-0 bg-white d-flex align-items-center justify-content-between p-3 position-relative" style="z-index: 1060;">
+                <h5 class="modal-title fw-bold mb-0" style="color: var(--primary-color);">Certificate Details</h5>
+                <button type="button" class="btn-close ms-auto shadow-none" data-bs-dismiss="modal" aria-label="Close" style="cursor: pointer; position: relative; z-index: 1070;"></button>
+            </div>
+            <div class="modal-body p-4 text-center">
+                <img src="CertIC3.jpg" class="img-fluid rounded-3 mb-3 shadow-sm" style="max-height: 520px;">
+                <img src="ResultscoreIC3.jpg" class="img-fluid rounded-3 mb-4 shadow-sm" style="max-height: 520px;" alt="IC3 Exam Score Report">
+                
+                <h4 class="fw-bold mb-1" style="color: var(--primary-color);">IC3 Digital Literacy Certification</h4>
+                <p class="text-muted mb-3 small">Global Standard Six - Level 1 (Issued by Certiport)</p>
+                <div class="p-3 bg-light rounded-3 text-start small">
+                    <strong>Credentials Verified:</strong> Technology Basics, Digital Citizenship, Information Management, Content Creation, and Security.
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Modal 3: Power BI -->
     <div class="modal fade" id="powerbiModal" tabindex="-1" aria-hidden="true">
@@ -668,6 +801,90 @@
     </div>
     <!-- 📜 เรียกใช้งาน Bootstrap 5 JS Bundle (ตัวนี้จะทำหน้าที่สั่งปิด-เปิด Modal ทั้งหมด) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ========================================================================= -->
+<!-- 📦 โซน POPUP MODALS My Projects -->
+<!-- ========================================================================= -->
+
+<!-- 🆔 Popup โปรเจกต์ที่ 1: SmartEvent -->
+<div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0" style="border-radius: 16px;">
+            <div class="modal-header border-0 bg-white d-flex align-items-center justify-content-between p-3 position-relative" style="z-index: 1060;">
+                <h5 class="modal-title fw-bold mb-0" style="color: var(--primary-color);">Project Details</h5>
+                <button type="button" class="btn-close ms-auto shadow-none" data-bs-dismiss="modal" aria-label="Close" style="cursor: pointer; position: relative; z-index: 1070;"></button>
+            </div>
+            <div class="modal-body p-4 text-center">
+                <img src="SmartEven.jpg" class="img-fluid rounded-3 mb-4 shadow-sm" style="max-height: 520px; width: 100%; object-fit: cover;">
+                <h4 class="fw-bold mb-1" style="color: var(--primary-color);">SmartEvent</h4>
+                <p class="text-muted mb-3 small">Intelligent Event Registration Management System</p>
+                <div class="p-3 bg-light rounded-3 text-start small">
+                    <strong>Description:</strong> A full-stack intelligent event registration management system featuring a secure Payment Gateway API (Sandbox) for automated tokenized transactions and E-Ticket generation. It integrates Google OAuth 2.0 for streamlined authentication and implements role-based access control with a robust MySQL backend.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 🆔 Popup โปรเจกต์ที่ 2: Cosmetics E-Commerce -->
+<div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0" style="border-radius: 16px;">
+            <div class="modal-header border-0 bg-white d-flex align-items-center justify-content-between p-3 position-relative" style="z-index: 1060;">
+                <h5 class="modal-title fw-bold mb-0" style="color: var(--primary-color);">Project Details</h5>
+                <button type="button" class="btn-close ms-auto shadow-none" data-bs-dismiss="modal" aria-label="Close" style="cursor: pointer; position: relative; z-index: 1070;"></button>
+            </div>
+            <div class="modal-body p-4 text-center">
+                <img src="Glowery.jpg" class="img-fluid rounded-3 mb-4 shadow-sm" style="max-height: 520px; width: 100%; object-fit: cover;">
+                <h4 class="fw-bold mb-1" style="color: var(--primary-color);">Cosmetics E-Commerce</h4>
+                <p class="text-muted mb-3 small">Online Cosmetics Store</p>
+                <div class="p-3 bg-light rounded-3 text-start small">
+                    <strong>Description:</strong> Online cosmetics store featuring shopping cart functionality and a backend system for basic data management via CRUD operations. It is integrated with a backend system to manage user and product data securely, facilitating easy data expansion and administrative monitoring.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 🆔 Popup โปรเจกต์ที่ 3: Suicide Risk Prediction -->
+<div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0" style="border-radius: 16px;">
+            <div class="modal-header border-0 bg-white d-flex align-items-center justify-content-between p-3 position-relative" style="z-index: 1060;">
+                <h5 class="modal-title fw-bold mb-0" style="color: var(--primary-color);">Project Details</h5>
+                <button type="button" class="btn-close ms-auto shadow-none" data-bs-dismiss="modal" aria-label="Close" style="cursor: pointer; position: relative; z-index: 1070;"></button>
+            </div>
+            <div class="modal-body p-4 text-center">
+                <img src="DA.jpg" class="img-fluid rounded-3 mb-4 shadow-sm" style="max-height: 520px; width: 100%; object-fit: cover;">
+                <h4 class="fw-bold mb-1" style="color: var(--primary-color);">Classification Approach for Early Prediction of Suicide Risk</h4>
+                <p class="text-muted mb-3 small">Data Mining & Predictive Analytics</p>
+                <div class="p-3 bg-light rounded-3 text-start small">
+                    <strong>Description:</strong> Data Mining and Predictive Analytics for Suicide Risk Assessment: An Altair AI Studio Approach. This study explores the application of various machine learning algorithms to evaluate and identify early indicators of mental health vulnerability, aiming to build reliable preventive models.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 🆔 Popup โปรเจกต์ที่ 4: ICU Length of Stay Prediction -->
+<div class="modal fade" id="projectModal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0" style="border-radius: 16px;">
+            <div class="modal-header border-0 bg-white d-flex align-items-center justify-content-between p-3 position-relative" style="z-index: 1060;">
+                <h5 class="modal-title fw-bold mb-0" style="color: var(--primary-color);">Project Details</h5>
+                <button type="button" class="btn-close ms-auto shadow-none" data-bs-dismiss="modal" aria-label="Close" style="cursor: pointer; position: relative; z-index: 1070;"></button>
+            </div>
+            <div class="modal-body p-4 text-center">
+                <img src="ICU.jpg" class="img-fluid rounded-3 mb-4 shadow-sm" style="max-height: 520px; width: 100%; object-fit: cover;">
+                <h4 class="fw-bold mb-1" style="color: var(--primary-color);">Performance Comparison of Shock Index and Vital Index in Predicting ICU Length of Stay</h4>
+                <p class="text-muted mb-3 small">Predictive Modeling & Healthcare Analytics</p>
+                <div class="p-3 bg-light rounded-3 text-start small">
+                    <strong>Description:</strong> Predictive Modeling for ICU Length of Stay Forecasting: An RStudio Approach. This analytical project conducts a comprehensive performance comparison between Shock Index and Vital Index metrics to optimize intensive care resource utilization and elevate hospital forecasting precision.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
